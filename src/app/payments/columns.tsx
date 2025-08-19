@@ -9,6 +9,13 @@ export interface Payment {
   status: "success" | "pending" | "failed";
   amount: number | string;
 }
+
+// Extend TableMeta to include currency
+declare module "@tanstack/react-table" {
+  interface TableMeta<TData> {
+    currency?: "USD" | "JPY";
+  }
+}
 import { Badge } from "@/components/ui/badge";
 import {
   DropdownMenu,
